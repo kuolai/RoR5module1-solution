@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+		<p>do NOT consider and empty item, i.e., , , as an item towards to the count
+		</p>
+		<div class="form-group">
+             <input id="lunch-menu" type="text"
+			 ng-model="items"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button ng-click="judgeLunch()"
+			 class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-model="message">
+           <!-- Your message can go here. -->
+		   {{message}}
+         </div>
+   </div>
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+</body>
+</html>
